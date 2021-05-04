@@ -11,7 +11,7 @@ function App() {
   const [title, setTitle] = useState();
   const [nominated, setNominated] = useStickyState([]);
   const { data, isLoading } = useSWR(
-    `https://www.omdbapi.com/?s=${title}&apikey=4e946f65`,
+    `https://www.omdbapi.com/?s=${title}&apikey=4e946f65&type=movie`,
     fetcher
   );
 
