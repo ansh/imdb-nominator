@@ -10,7 +10,10 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function App() {
   const [title, setTitle] = useState();
   const [nominated, setNominated] = useStickyState([]);
-  const { data, isLoading } = useSWR(`http://www.omdbapi.com/?s=${title}&apikey=4e946f65`, fetcher);
+  const { data, isLoading } = useSWR(
+    `https://www.omdbapi.com/?s=${title}&apikey=4e946f65`,
+    fetcher
+  );
 
   const addNomination = (item) => {
     setNominated([...nominated, item]);
